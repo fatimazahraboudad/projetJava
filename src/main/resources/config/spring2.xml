@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id = "tpEntity" class="com.ioc.configurationbeanxml.tp.TpEntity">
+    </bean>
+
+    <bean id="tpServices" class="com.ioc.configurationbeanxml.tp.TpServices">
+        <property name="entities">
+            <list>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="tpController" class="com.ioc.configurationbeanxml.tp.TpController">
+        <constructor-arg ref="tpServices"></constructor-arg>
+    </bean>
+
+</beans>
